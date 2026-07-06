@@ -190,7 +190,7 @@
         </div>
         <h2>Data Entry Portal</h2>
         
-        <!-- হিডেন সেফটি আইফ্রেম (সাবমিশনের জন্য) -->
+        <!-- হিডেন সেফটি আইফ্রেম -->
         <iframe name="hidden_iframe" id="hidden_iframe" class="hidden" onload="if(typeof iframe_loaded !== 'undefined') iframe_loaded();"></iframe>
         
         <form id="data-form" method="POST" target="hidden_iframe" onsubmit="handleSubmit(event)">
@@ -292,7 +292,7 @@
         }
     }
 
-    // ৪MD ব্লকিং এড়াতে নিখুঁত JSONP লাইভ সার্চ মেথড
+    // ৪MD ব্লকিং এড়াতে স্ক্রিপ্ট ইনজেকশন টেকনিক (JSONP)
     function liveCheckUser() {
         var aadharVal = document.getElementById('aadhar_ac').value.trim();
         var msgDiv = document.getElementById('msg');
@@ -308,13 +308,12 @@
             
             var script = document.createElement("script");
             script.id = "jsonp-fetch";
-            // গুগল ৪MD এড়াতে এখানে callback প্যারামিটার পাস করা হচ্ছে
             script.src = SCRIPT_URL + "?action=fetchUser&aadhar_ac=" + encodeURIComponent(aadharVal) + "&callback=onUserDataFetched&_ts=" + new Date().getTime();
             document.body.appendChild(script);
-        }, 400);
+        }, 300);
     }
 
-    // গ্লোবাল কলব্যাক ফাংশন যা ডেটা রিসিভ করে অটো-ফিল করবে
+    // ৪MD বাইপাস করে নিখুঁত অটো-ফিল রিসিভার ফাংশন
     window.onUserDataFetched = function(data) {
         var msgDiv = document.getElementById('msg');
         if (data && data.success && data.user) {
