@@ -42,13 +42,127 @@
             filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.4));
         }
         h2 {
-            margin-bottom: 25px;
-            color: #ffffff;
+            margin-bottom: 30px;
             text-align: center;
-            font-weight: 700;
-            font-size: 26px;
+            font-weight: 800;
+            font-size: 28px;
             letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #ffffff 30%, #38bdf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 2px 8px rgba(56, 189, 248, 0.3));
         }
+        
+        /* প্রিমিয়াম অ্যানালিটিক্স প্যানেল ও ডেট ফিল্টার ডিজাইন */
+        .analytics-panel {
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 16px;
+            padding: 15px;
+            margin-bottom: 25px;
+        }
+        .analytics-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 8px;
+        }
+        .analytics-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #38bdf8;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .toggle-view-btn {
+            background: transparent;
+            border: none;
+            color: #94a3b8;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 0;
+            width: auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .toggle-view-btn:hover {
+            color: #38bdf8;
+            background: transparent;
+            box-shadow: none;
+        }
+        .date-filter-row {
+            display: flex; 
+            gap: 10px; 
+            margin-bottom: 15px; 
+            align-items: flex-end;
+        }
+        .date-input-group {
+            flex: 1;
+        }
+        .date-input-group label {
+            font-size: 10px !important;
+            margin-bottom: 4px !important;
+            color: #64748b !important;
+        }
+        .date-input-group input[type="date"] {
+            padding: 8px 10px;
+            font-size: 13px;
+            border-radius: 8px;
+        }
+        .search-btn {
+            width: auto;
+            margin-top: 0;
+            padding: 8px 15px;
+            font-size: 13px;
+            border-radius: 8px;
+            background: #38bdf8;
+            color: #0f172a;
+        }
+        .search-btn:hover {
+            background: #0ea5e9;
+        }
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .analytics-box {
+            background: #0f172a;
+            padding: 10px 12px;
+            border-radius: 10px;
+            border: 1px solid #1e293b;
+        }
+        .analytics-box.full-width {
+            grid-column: span 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .analytics-label {
+            font-size: 11px;
+            color: #64748b;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        .analytics-value {
+            font-size: 16px;
+            font-weight: 700;
+            color: #f8fafc;
+            transition: filter 0.2s;
+        }
+        .analytics-value.blur-text {
+            filter: blur(5px);
+            user-select: none;
+        }
+        .val-deposit { color: #4ade80; }
+        .val-withdraw { color: #f87171; }
+
+        /* ফর্ম ইনপুট ও লেবেল ডিজাইন */
         .form-group {
             margin-bottom: 20px;
             position: relative;
@@ -61,6 +175,11 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+        }
+        .required-star {
+            color: #f87171;
+            font-weight: bold;
+            margin-left: 2px;
         }
         input {
             width: 100%;
@@ -80,6 +199,13 @@
         }
         input::placeholder {
             color: #475569;
+        }
+        .input-row {
+            display: flex;
+            gap: 15px;
+        }
+        .input-row .form-group {
+            flex: 1;
         }
         button {
             width: 100%;
@@ -140,15 +266,10 @@
             font-size: 14px;
             font-weight: 500;
         }
-        .input-row {
-            display: flex;
-            gap: 15px;
-        }
-        .input-row .form-group {
-            flex: 1;
-        }
         .logout-btn-container {
-            text-align: right;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-bottom: 20px;
         }
         .logout-link {
@@ -163,7 +284,6 @@
 <body>
 
 <div class="container">
-    <!-- 1. Secure Login Box -->
     <div id="login-box">
         <div class="logo-area">
             <svg viewBox="0 0 24 24">
@@ -183,41 +303,77 @@
         <p id="login-error"></p>
     </div>
 
-    <!-- 2. Data Entry Form Box -->
     <div id="form-box" class="hidden">
         <div class="logout-btn-container">
+            <span style="color:#64748b; font-size:14px; font-weight:600;">Welcome, CSP</span>
             <span class="logout-link" onclick="logout()">Logout →</span>
         </div>
-        <h2>Data Entry Portal</h2>
         
-        <!-- হিডেন সেফটি আইফ্রেম -->
+        <h2>SHREYANS COMPUTERS</h2>
+
+        <div class="analytics-panel">
+            <div class="analytics-header">
+                <span class="analytics-title">Custom Report</span>
+                <span class="toggle-view-btn" onclick="toggleAnalyticsView()">
+                    <span id="eye-icon">👁️</span> <span id="eye-text">Hide</span>
+                </span>
+            </div>
+            
+            <div class="date-filter-row">
+                <div class="date-input-group">
+                    <label>From Date</label>
+                    <input type="date" id="from-date">
+                </div>
+                <div class="date-input-group">
+                    <label>To Date</label>
+                    <input type="date" id="to-date">
+                </div>
+                <button type="button" class="search-btn" onclick="loadCustomAnalytics()">Search</button>
+            </div>
+
+            <div class="analytics-grid">
+                <div class="analytics-box">
+                    <div class="analytics-label">Total Deposit</div>
+                    <div id="today-deposit" class="analytics-value val-deposit">₹0</div>
+                </div>
+                <div class="analytics-box">
+                    <div class="analytics-label">Total Withdrawal</div>
+                    <div id="today-withdrawal" class="analytics-value val-withdraw">₹0</div>
+                </div>
+                <div class="analytics-box full-width">
+                    <div class="analytics-label" style="margin-bottom:0;">Total Successful Txns</div>
+                    <div id="today-txns" class="analytics-value" style="color:#38bdf8;">0</div>
+                </div>
+            </div>
+        </div>
+        
         <iframe name="hidden_iframe" id="hidden_iframe" class="hidden" onload="if(typeof iframe_loaded !== 'undefined') iframe_loaded();"></iframe>
         
         <form id="data-form" method="POST" target="hidden_iframe" onsubmit="handleSubmit(event)">
             
             <div class="form-group">
-                <label for="aadhar_ac">Aadhar / AC Number</label>
+                <label for="aadhar_ac">Aadhar / AC Number <span class="required-star">*</span></label>
                 <input type="text" id="aadhar_ac" name="aadhar_ac" required placeholder="Enter Aadhar or AC Number" autocomplete="off" oninput="liveCheckUser()">
             </div>
 
             <div class="form-group">
-                <label for="name">Full Name</label>
+                <label for="name">Full Name <span class="required-star">*</span></label>
                 <input type="text" id="name" name="name" required placeholder="Customer Full Name" autocomplete="name">
             </div>
 
             <div class="form-group">
-                <label for="phone">Phone Number</label>
+                <label for="phone">Phone Number <span class="required-star">*</span></label>
                 <input type="tel" id="phone" name="phone" required placeholder="10-digit Mobile Number" autocomplete="tel">
             </div>
 
             <div class="input-row">
                 <div class="form-group">
-                    <label for="deposit">Deposit (₹)</label>
+                    <label for="deposit">Deposit (₹) <span class="required-star">*</span></label>
                     <input type="number" id="deposit" name="deposit" min="0" placeholder="Amount" autocomplete="off">
                 </div>
 
                 <div class="form-group">
-                    <label for="withdrawal">Withdrawal (₹)</label>
+                    <label for="withdrawal">Withdrawal (₹) <span class="required-star">*</span></label>
                     <input type="number" id="withdrawal" name="withdrawal" min="0" placeholder="Amount" autocomplete="off">
                 </div>
             </div>
@@ -244,7 +400,11 @@
             } else {
                 showFormBox();
                 startInactivityTimer();
+                setDefaultDates();
             }
+        }
+        if(localStorage.getItem("analyticsHidden") === "true") {
+            applyHideState(true);
         }
     };
 
@@ -257,6 +417,7 @@
             sessionStorage.setItem("lastActivityTime", new Date().getTime().toString());
             showFormBox();
             startInactivityTimer();
+            setDefaultDates();
             document.getElementById('login-error').innerText = "";
         } else {
             document.getElementById('login-error').innerText = "Invalid User ID or Password!";
@@ -292,7 +453,54 @@
         }
     }
 
-    // ৪MD ব্লকিং এড়াতে নিখুঁত ব্যাকগ্রাউন্ড সার্চ মেথড
+    function setDefaultDates() {
+        var today = new Date().toISOString().split('T')[0];
+        document.getElementById('from-date').value = today;
+        document.getElementById('to-date').value = today;
+        loadCustomAnalytics();
+    }
+
+    function loadCustomAnalytics() {
+        var fromDate = document.getElementById('from-date').value;
+        var toDate = document.getElementById('to-date').value;
+        
+        if(!fromDate || !toDate) {
+            alert("Please select both dates!");
+            return;
+        }
+
+        removeJsonpScript("jsonp-analytics");
+        var script = document.createElement("script");
+        script.id = "jsonp-analytics";
+        script.src = SCRIPT_URL + "?action=getAnalytics&from=" + fromDate + "&to=" + toDate + "&callback=onAnalyticsFetched&_ts=" + new Date().getTime();
+        document.body.appendChild(script);
+    }
+
+    window.onAnalyticsFetched = function(data) {
+        if(data && data.success) {
+            document.getElementById('today-deposit').innerText = "₹" + data.totalDeposit;
+            document.getElementById('today-withdrawal').innerText = "₹" + data.totalWithdrawal;
+            document.getElementById('today-txns').innerText = data.totalTxns;
+        }
+        removeJsonpScript("jsonp-analytics");
+    };
+
+    function toggleAnalyticsView() {
+        var isHidden = localStorage.getItem("analyticsHidden") === "true";
+        applyHideState(!isHidden);
+    }
+
+    function applyHideState(hide) {
+        var vals = document.querySelectorAll('.analytics-value');
+        vals.forEach(function(val) {
+            if(hide) val.classList.add('blur-text');
+            else val.classList.remove('blur-text');
+        });
+        document.getElementById('eye-icon').innerText = hide ? "🙈" : "👁️";
+        document.getElementById('eye-text').innerText = hide ? "Show" : "Hide";
+        localStorage.setItem("analyticsHidden", hide ? "true" : "false");
+    }
+
     function liveCheckUser() {
         var aadharVal = document.getElementById('aadhar_ac').value.trim();
         var msgDiv = document.getElementById('msg');
@@ -305,7 +513,6 @@
         clearTimeout(liveTimeout);
         liveTimeout = setTimeout(function() {
             removeJsonpScript("jsonp-fetch");
-            
             var script = document.createElement("script");
             script.id = "jsonp-fetch";
             script.src = SCRIPT_URL + "?action=fetchUser&aadhar_ac=" + encodeURIComponent(aadharVal) + "&callback=onUserDataFetched&_ts=" + new Date().getTime();
@@ -313,7 +520,6 @@
         }, 300);
     }
 
-    // অটো-ফিল ডাটা রিসিভার কলব্যাক
     window.onUserDataFetched = function(data) {
         var msgDiv = document.getElementById('msg');
         if (data && data.success && data.user) {
@@ -328,10 +534,40 @@
         removeJsonpScript("jsonp-fetch");
     };
 
+    // ফ্লেক্সিবল ডিপোজিট/উইথড্রাল চেক লজিক সম্বলিত সাবমিট হ্যান্ডলার
     function handleSubmit(e) {
+        e.preventDefault();
+        
         var msgDiv = document.getElementById('msg');
         var submitBtn = document.getElementById('submit-btn');
         var form = document.getElementById('data-form');
+        
+        var depositVal = document.getElementById('deposit').value.trim();
+        var withdrawalVal = document.getElementById('withdrawal').value.trim();
+
+        // কন্ডিশন ১: দুটিই ফাঁকা রাখা যাবে না
+        if (!depositVal && !withdrawalVal) {
+            msgDiv.className = "message status-correction"; 
+            msgDiv.innerText = "Validation Warning: Please fill either Deposit or Withdrawal!";
+            msgDiv.classList.remove('hidden');
+            return;
+        }
+
+        // কন্ডিশন ২: দুটি একসাথে পূরণ করা হলে লাল এরর আসবে
+        if (depositVal && withdrawalVal) {
+            msgDiv.className = "message status-loading"; 
+            msgDiv.style.color = "#f87171";
+            msgDiv.style.background = "rgba(248, 113, 113, 0.1)";
+            msgDiv.style.border = "1px solid rgba(248, 113, 113, 0.2)";
+            msgDiv.innerText = "Error: Please fill only ONE field (Deposit OR Withdrawal)!";
+            msgDiv.classList.remove('hidden');
+            return;
+        }
+
+        // কন্ডিশন পাস হলে স্টাইল রিসেট
+        msgDiv.style.color = "";
+        msgDiv.style.background = "";
+        msgDiv.style.border = "";
         
         msgDiv.className = "message status-loading";
         msgDiv.innerText = "Synchronizing data with Google Sheets...";
@@ -342,6 +578,8 @@
 
         form.action = SCRIPT_URL + "?action=submitForm";
         isSubmitted = true;
+        
+        form.submit();
     }
 
     function iframe_loaded() {
@@ -357,8 +595,10 @@
         document.getElementById('data-form').reset();
         submitBtn.innerText = "SUBMIT TO SHEET";
         submitBtn.disabled = false;
-        
+    
         isSubmitted = false;
+        
+        setTimeout(loadCustomAnalytics, 1000);
     }
 
     function removeJsonpScript(id) {
