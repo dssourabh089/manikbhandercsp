@@ -54,7 +54,7 @@
             filter: drop-shadow(0 2px 8px rgba(56, 189, 248, 0.3));
         }
         
-        /* প্রিমিয়াম অ্যানালিটিক্স প্যানেল ও ডেট ফিল্টার ডিজাইন */
+        /* অ্যানালিটিক্স প্যানেল ও ডেট ফিল্টার ডিজাইন */
         .analytics-panel {
             background: rgba(15, 23, 42, 0.6);
             border: 1px solid rgba(56, 189, 248, 0.2);
@@ -90,195 +90,40 @@
             align-items: center;
             gap: 5px;
         }
-        .toggle-view-btn:hover {
-            color: #38bdf8;
-            background: transparent;
-            box-shadow: none;
-        }
-        .date-filter-row {
-            display: flex; 
-            gap: 10px; 
-            margin-bottom: 15px; 
-            align-items: flex-end;
-        }
-        .date-input-group {
-            flex: 1;
-        }
-        .date-input-group label {
-            font-size: 10px !important;
-            margin-bottom: 4px !important;
-            color: #64748b !important;
-        }
-        .date-input-group input[type="date"] {
-            padding: 8px 10px;
-            font-size: 13px;
-            border-radius: 8px;
-        }
-        .search-btn {
-            width: auto;
-            margin-top: 0;
-            padding: 8px 15px;
-            font-size: 13px;
-            border-radius: 8px;
-            background: #38bdf8;
-            color: #0f172a;
-        }
-        .search-btn:hover {
-            background: #0ea5e9;
-        }
-        .analytics-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-        }
-        .analytics-box {
-            background: #0f172a;
-            padding: 10px 12px;
-            border-radius: 10px;
-            border: 1px solid #1e293b;
-        }
-        .analytics-box.full-width {
-            grid-column: span 2;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .analytics-label {
-            font-size: 11px;
-            color: #64748b;
-            font-weight: 600;
-            margin-bottom: 2px;
-        }
-        .analytics-value {
-            font-size: 16px;
-            font-weight: 700;
-            color: #f8fafc;
-            transition: filter 0.2s;
-        }
-        .analytics-value.blur-text {
-            filter: blur(5px);
-            user-select: none;
-        }
+        .toggle-view-btn:hover { color: #38bdf8; background: transparent; box-shadow: none; }
+        .date-filter-row { display: flex; gap: 10px; margin-bottom: 15px; align-items: flex-end; }
+        .date-input-group { flex: 1; }
+        .date-input-group label { font-size: 10px !important; margin-bottom: 4px !important; color: #64748b !important; }
+        .date-input-group input[type="date"] { padding: 8px 10px; font-size: 13px; border-radius: 8px; background: #0f172a; border: 1px solid #334155; color: #f8fafc; width: 100%; }
+        .search-btn { width: auto; margin-top: 0; padding: 8px 15px; font-size: 13px; border-radius: 8px; background: #38bdf8; color: #0f172a; }
+        .search-btn:hover { background: #0ea5e9; }
+        .analytics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .analytics-box { background: #0f172a; padding: 10px 12px; border-radius: 10px; border: 1px solid #1e293b; }
+        .analytics-box.full-width { grid-column: span 2; display: flex; justify-content: space-between; align-items: center; }
+        .analytics-label { font-size: 11px; color: #64748b; font-weight: 600; margin-bottom: 2px; }
+        .analytics-value { font-size: 16px; font-weight: 700; color: #f8fafc; transition: filter 0.2s; }
+        .analytics-value.blur-text { filter: blur(5px); user-select: none; }
         .val-deposit { color: #4ade80; }
         .val-withdraw { color: #f87171; }
-
-        /* ফর্ম ইনপুট ও লেবেল ডিজাইন */
-        .form-group {
-            margin-bottom: 20px;
-            position: relative;
-        }
-        label {
-            display: block;
-            margin-bottom: 6px;
-            color: #94a3b8;
-            font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .required-star {
-            color: #f87171;
-            font-weight: bold;
-            margin-left: 2px;
-        }
-        input {
-            width: 100%;
-            padding: 14px 16px;
-            background: #0f172a;
-            border: 1px solid #334155;
-            border-radius: 12px;
-            font-size: 15px;
-            color: #f8fafc;
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        input:focus {
-            border-color: #38bdf8;
-            outline: none;
-            box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.15);
-            background: #0f172a;
-        }
-        input::placeholder {
-            color: #475569;
-        }
-        .input-row {
-            display: flex;
-            gap: 15px;
-        }
-        .input-row .form-group {
-            flex: 1;
-        }
-        button {
-            width: 100%;
-            padding: 15px;
-            background: #38bdf8;
-            color: #0f172a;
-            border: none;
-            border-radius: 12px;
-            font-size: 16px;
-            cursor: pointer;
-            font-weight: 700;
-            margin-top: 10px;
-            letter-spacing: 0.5px;
-            transition: all 0.2s ease;
-        }
-        button:hover {
-            background: #0ea5e9;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
-        }
-        button:disabled {
-            background: #334155;
-            color: #64748b;
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
-        }
-        .hidden {
-            display: none !important;
-        }
-        .message {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            padding: 12px;
-            border-radius: 10px;
-        }
-        .status-loading {
-            color: #38bdf8;
-            background: rgba(56, 189, 248, 0.1);
-            border: 1px solid rgba(56, 189, 248, 0.2);
-        }
-        .status-success {
-            color: #4ade80;
-            background: rgba(74, 222, 128, 0.1);
-            border: 1px solid rgba(74, 222, 128, 0.2);
-        }
-        .status-correction {
-            color: #fbbf24;
-            background: rgba(251, 191, 36, 0.1);
-            border: 1px solid rgba(251, 191, 36, 0.2);
-        }
-        #login-error {
-            color: #f87171;
-            text-align: center;
-            margin-top: 15px;
-            font-size: 14px;
-            font-weight: 500;
-        }
-        .logout-btn-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .logout-link {
-            color: #f87171;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 600;
-            text-decoration: none;
-        }
+        
+        .form-group { margin-bottom: 20px; position: relative; }
+        label { display: block; margin-bottom: 6px; color: #94a3b8; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .required-star { color: #f87171; font-weight: bold; margin-left: 2px; }
+        input { width: 100%; padding: 14px 16px; background: #0f172a; border: 1px solid #334155; border-radius: 12px; font-size: 15px; color: #f8fafc; transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
+        input:focus { border-color: #38bdf8; outline: none; box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.15); background: #0f172a; }
+        input::placeholder { color: #475569; }
+        .input-row { display: flex; gap: 15px; }
+        .input-row .form-group { flex: 1; }
+        button { width: 100%; padding: 15px; background: #38bdf8; color: #0f172a; border: none; border-radius: 12px; font-size: 16px; cursor: pointer; font-weight: 700; margin-top: 10px; letter-spacing: 0.5px; transition: all 0.2s ease; }
+        button:hover { background: #0ea5e9; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3); }
+        button:disabled { background: #334155; color: #64748b; cursor: not-allowed; transform: none; box-shadow: none; }
+        .hidden { display: none !important; }
+        .message { text-align: center; margin-top: 20px; font-size: 14px; font-weight: 600; padding: 12px; border-radius: 10px; }
+        .status-loading { color: #38bdf8; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.2); }
+        .status-success { color: #4ade80; background: rgba(74, 222, 128, 0.1); border: 1px solid rgba(74, 222, 128, 0.2); }
+        .status-correction { color: #fbbf24; background: rgba(251, 191, 36, 0.1); border: 1px solid rgba(251, 191, 36, 0.2); }
+        .logout-btn-container { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .logout-link { color: #f87171; cursor: pointer; font-size: 14px; font-weight: 600; text-decoration: none; }
     </style>
 </head>
 <body>
@@ -299,7 +144,7 @@
             <label for="password">Password</label>
             <input type="password" id="password" placeholder="Enter Password" autocomplete="current-password">
         </div>
-        <button onclick="handleLogin()">LOGIN</button>
+        <button id="login-btn" onclick="handleLogin()">LOGIN</button>
         <p id="login-error"></p>
     </div>
 
@@ -309,7 +154,7 @@
             <span class="logout-link" onclick="logout()">Logout →</span>
         </div>
         
-        <h2>SHREYANS COMPUTERS</h2>
+        <h2>Data Entry Portal</h2>
 
         <div class="analytics-panel">
             <div class="analytics-header">
@@ -411,19 +256,45 @@
     function handleLogin() {
         var uId = document.getElementById('username').value.trim();
         var pass = document.getElementById('password').value;
+        var loginBtn = document.getElementById('login-btn');
+        var errorDiv = document.getElementById('login-error');
 
-        if (uId === "9366896945" && pass === "Sbi@Csp") {
+        if (!uId || !pass) {
+            errorDiv.innerText = "Please enter both User ID and Password!";
+            return;
+        }
+
+        loginBtn.innerText = "VERIFYING...";
+        loginBtn.disabled = true;
+        errorDiv.innerText = "";
+
+        removeJsonpScript("jsonp-login");
+        var script = document.createElement("script");
+        script.id = "jsonp-login";
+        script.src = SCRIPT_URL + "?action=loginCSP&uId=" + encodeURIComponent(uId) + "&pass=" + encodeURIComponent(pass) + "&callback=onLoginVerified&_ts=" + new Date().getTime();
+        document.body.appendChild(script);
+    }
+
+    window.onLoginVerified = function(data) {
+        var loginBtn = document.getElementById('login-btn');
+        var errorDiv = document.getElementById('login-error');
+        
+        loginBtn.innerText = "LOGIN";
+        loginBtn.disabled = false;
+
+        if (data && data.success) {
             sessionStorage.setItem("sessionActive", "true");
             sessionStorage.setItem("lastActivityTime", new Date().getTime().toString());
             showFormBox();
             startInactivityTimer();
             setDefaultDates();
-            document.getElementById('login-error').innerText = "";
         } else {
-            document.getElementById('login-error').innerText = "Invalid User ID or Password!";
+            errorDiv.innerText = "Invalid User ID or Password!";
         }
-    }
+        removeJsonpScript("jsonp-login");
+    };
 
+    // মিসিং ফাংশনটি এখানে নিখুঁতভাবে যোগ করা হলো
     function showFormBox() {
         document.getElementById('login-box').classList.add('hidden');
         document.getElementById('form-box').classList.remove('hidden');
@@ -463,11 +334,7 @@
     function loadCustomAnalytics() {
         var fromDate = document.getElementById('from-date').value;
         var toDate = document.getElementById('to-date').value;
-        
-        if(!fromDate || !toDate) {
-            alert("Please select both dates!");
-            return;
-        }
+        if(!fromDate || !toDate) return;
 
         removeJsonpScript("jsonp-analytics");
         var script = document.createElement("script");
@@ -509,7 +376,6 @@
             removeJsonpScript("jsonp-fetch");
             return;
         }
-        
         clearTimeout(liveTimeout);
         liveTimeout = setTimeout(function() {
             removeJsonpScript("jsonp-fetch");
@@ -534,10 +400,8 @@
         removeJsonpScript("jsonp-fetch");
     };
 
-    // ফ্লেক্সিবল ডিপোজিট/উইথড্রাল চেক লজিক সম্বলিত সাবমিট হ্যান্ডলার
     function handleSubmit(e) {
         e.preventDefault();
-        
         var msgDiv = document.getElementById('msg');
         var submitBtn = document.getElementById('submit-btn');
         var form = document.getElementById('data-form');
@@ -545,7 +409,6 @@
         var depositVal = document.getElementById('deposit').value.trim();
         var withdrawalVal = document.getElementById('withdrawal').value.trim();
 
-        // কন্ডিশন ১: দুটিই ফাঁকা রাখা যাবে না
         if (!depositVal && !withdrawalVal) {
             msgDiv.className = "message status-correction"; 
             msgDiv.innerText = "Validation Warning: Please fill either Deposit or Withdrawal!";
@@ -553,7 +416,6 @@
             return;
         }
 
-        // কন্ডিশন ২: দুটি একসাথে পূরণ করা হলে লাল এরর আসবে
         if (depositVal && withdrawalVal) {
             msgDiv.className = "message status-loading"; 
             msgDiv.style.color = "#f87171";
@@ -564,11 +426,7 @@
             return;
         }
 
-        // কন্ডিশন পাস হলে স্টাইল রিসেট
-        msgDiv.style.color = "";
-        msgDiv.style.background = "";
-        msgDiv.style.border = "";
-        
+        msgDiv.style.color = ""; msgDiv.style.background = ""; msgDiv.style.border = "";
         msgDiv.className = "message status-loading";
         msgDiv.innerText = "Synchronizing data with Google Sheets...";
         msgDiv.classList.remove('hidden');
@@ -578,13 +436,11 @@
 
         form.action = SCRIPT_URL + "?action=submitForm";
         isSubmitted = true;
-        
         form.submit();
     }
 
     function iframe_loaded() {
         if (!isSubmitted) return;
-        
         var msgDiv = document.getElementById('msg');
         var submitBtn = document.getElementById('submit-btn');
         
@@ -595,7 +451,6 @@
         document.getElementById('data-form').reset();
         submitBtn.innerText = "SUBMIT TO SHEET";
         submitBtn.disabled = false;
-    
         isSubmitted = false;
         
         setTimeout(loadCustomAnalytics, 1000);
